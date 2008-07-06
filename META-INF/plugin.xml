@@ -1,0 +1,33 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin>
+  <name>Java.net plugin</name>
+  <description>Connects IntelliJ IDEA to java.net</description>
+  <version>1.0</version>
+  <vendor url="http://www.kohsuke.org/">Kohsuke Kawaguchi</vendor>
+  <idea-version since-build="7361"/>
+  <application-components>
+    <component>
+      <implementation-class>org.jvnet.idea_plugin.issue_tracker.editor.IssueEditorProvider</implementation-class>
+    </component>
+  </application-components>
+  <project-components>
+    <component>
+      <implementation-class>ProjectComponentImpl</implementation-class>
+    </component>
+    <component>
+      <implementation-class>org.jvnet.idea_plugin.issue_tracker.IssueTrackerToolWindow</implementation-class>
+    </component>
+  </project-components>
+  <actions>
+    <action id="org.jvnet.idea_plugin.issue_tracker.actions.BrowseIssueAction"
+            class="org.jvnet.idea_plugin.issue_tracker.actions.BrowseIssueAction" text="Open Issue"
+            description="opens an issue in the browser">
+      <add-to-group group-id="FileMenu" anchor="after" relative-to-action="Exit"/>
+    </action>
+    <action id="org.jvnet.idea_plugin.issue_tracker.actions.OpenIssueAction"
+            class="org.jvnet.idea_plugin.issue_tracker.actions.OpenIssueAction" text="Open issue"
+            description="Opens an issue">
+      <add-to-group group-id="FileMenu" anchor="after" relative-to-action="Exit"/>
+    </action>
+  </actions>
+</idea-plugin>
