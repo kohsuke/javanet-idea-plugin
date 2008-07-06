@@ -23,16 +23,9 @@ public class IssueTrackerToolWindow extends AbstractProjectComponentImpl {
         this.project = project;
     }
 
-    // despites @NonNls marker, this seems to be used as the window title
-    @NonNls
-    @NotNull
-    public String getComponentName() {
-        return "java.net";
-    }
-
     public void projectOpened() {
         ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(project);
-        toolWindow = toolWindowManager.registerToolWindow(getClass().getName(), false, ToolWindowAnchor.BOTTOM);
+        toolWindow = toolWindowManager.registerToolWindow(TITLE, false, ToolWindowAnchor.BOTTOM);
 
         // this didn't work
         toolWindow.setTitle("java.net issues");
@@ -42,11 +35,13 @@ public class IssueTrackerToolWindow extends AbstractProjectComponentImpl {
 
     public void projectClosed() {
         ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(project);
-        toolWindowManager.unregisterToolWindow(getClass().getName());
+        toolWindowManager.unregisterToolWindow(TITLE);
     }
 
     public static IssueTrackerToolWindow get(AnActionEvent e) {
         Project p = e.getData(DataKeys.PROJECT);
         return p.getComponent(IssueTrackerToolWindow.class);
     }
+
+    public static final String TITLE = "java.net";
 }
