@@ -21,21 +21,23 @@ import java.util.HashMap;
 /**
  * @author Kohsuke Kawaguchi
  */
-public class IssueEditor extends JPanel implements FileEditor {
+public class IssueEditor implements FileEditor {
     private final Map userData = new HashMap();
 
+    private final EditorForm form = new EditorForm();
+
     public IssueEditor(Project project, VirtualFile file) {
-        add(new JButton("test"));
+        form.postInit();
     }
 
     @NotNull
     public JComponent getComponent() {
-        return this;
+        return form.getForm();
     }
 
     @Nullable
     public JComponent getPreferredFocusedComponent() {
-        return this;
+        return form.getForm();
     }
 
     @NonNls
