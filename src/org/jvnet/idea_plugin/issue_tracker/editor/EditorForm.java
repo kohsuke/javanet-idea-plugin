@@ -4,6 +4,7 @@ import com.intellij.ui.JScrollPane2;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
+import java.awt.*;
 
 /**
  * @author Kohsuke Kawaguchi
@@ -14,6 +15,14 @@ public class EditorForm {
     private JPanel panel;
     private JPanel properties;
     private JPanel form;
+    private JComboBox comboBox3;
+    private JComboBox comboBox4;
+    private JComboBox comboBox5;
+    private JComboBox comboBox6;
+    private JComboBox comboBox7;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
 
     private JScrollPane outerMost;
 
@@ -22,9 +31,9 @@ public class EditorForm {
      * so this is a work around to manually create them.
      */
     public void postInit() {
-        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        panel.setLayout(new GridLayout(0,1));
         for(int i=0; i<10; i++) {
-            JLabel label = new JLabel("test1",JLabel.LEFT);
+            JLabel label = new JLabel("test1");
             panel.add(label);
 
             JTextArea text = new JTextArea("long\ntext");
