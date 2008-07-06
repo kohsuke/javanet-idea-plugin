@@ -17,6 +17,7 @@ import java.io.ByteArrayInputStream;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
+import org.jvnet.idea_plugin.issue_tracker.Icons;
 
 import javax.swing.*;
 
@@ -157,7 +158,7 @@ public class MemoryVirtualFile extends DeprecatedVirtualFile
    }
 
 	public Icon getIcon() {
-		return IconLoader.getIcon("/icons/jira-blue-16.png");
+		return Icons.ICON;
 	}
 
    /**

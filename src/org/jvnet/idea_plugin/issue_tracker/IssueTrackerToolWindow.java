@@ -35,7 +35,8 @@ public class IssueTrackerToolWindow extends AbstractProjectComponentImpl {
         toolWindow = toolWindowManager.registerToolWindow(getClass().getName(), false, ToolWindowAnchor.BOTTOM);
 
         // this didn't work
-        // toolWindow.setTitle("java.net issues");
+        toolWindow.setTitle("java.net issues");
+        toolWindow.setIcon(Icons.ICON);
         toolWindow.getComponent().add(new IssueTrackerPanel());
     }
 
