@@ -29,5 +29,9 @@
             description="Opens an issue">
       <add-to-group group-id="FileMenu" anchor="after" relative-to-action="Exit"/>
     </action>
+    <action id="org.jvnet.idea_plugin.issue_tracker.actions.FetchAllIssuesAction"
+            class="org.jvnet.idea_plugin.issue_tracker.actions.FetchAllIssuesAction" text="Fetch all issues">
+      <add-to-group group-id="FileMenu" anchor="after" relative-to-action="Exit"/>
+    </action>
   </actions>
 </idea-plugin>
